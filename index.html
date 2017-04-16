@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CareMatch</title>
+    <meta charset="UTF-8">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1 align="center">
+      Care Match
+    </h1>
+    <div id="map">
+      <img src="images/map.png" alt="map">
+    </div>
+    <div align="center" id="current-tab">
+    </div>
+    <div align="center" id="tabs">
+      <nav aria-label="Page navigation">
+        <ul class="pagination pagination-lg">
+          <!--<li>-->
+            <!--<a href="#" aria-label="Previous">-->
+              <!--<span aria-hidden="true">&laquo;</span>-->
+            <!--</a>-->
+          <!--</li>-->
+          <li><a id="gender-link" href="#">Gender</a></li>
+          <li><a id="schedule-link" href="#">Schedule</a></li>
+          <li><a id="care-needs-link" href="#">Care Needs</a></li>
+          <li><a id="language-link" href="#">Language</a></li>
+          <!--<li>-->
+            <!--<a href="#" aria-label="Next">-->
+              <!--<span aria-hidden="true">&raquo;</span>-->
+            <!--</a>-->
+          <!--</li>-->
+        </ul>
+      </nav>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
