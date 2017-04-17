@@ -1,8 +1,32 @@
 $( document ).ready(function() {
-  var state = {gender:2,languages:{},careNeeds:{}}
+  var state = {gender:2,languages:new Set(),careNeeds:new Set()}
 
-  $(".gender-button").click(function(){
+  $(".language-button").click(function(e){
+    $("#"+this.id).toggleClass("language-selected")
+    languageNumber = this.id.substring(this.id.length-1,this.id.length)
+    if ($("#"+this.id).hasClass("language-selected")){
+      state.languages.add(languageNumber)
+    }else{
+      state.languages.delete(languageNumber)
+    }
   })
+
+  $(".care-needs-button").click(function(e){
+    $("#"+this.id).toggleClass("care-needs-selected")
+    careNeedsNumber = this.id.substring(this.id.length-1,this.id.length)
+    if ($("#"+this.id).hasClass("care-needs-selected")){
+      state.careNeeds.add(careNeedsNumber)
+    }else{
+      state.careNeeds.delete(careNeedsNumber)
+    }
+  })
+
+  $(".gender-button").click(function(e){
+    undoSelected(".gender-button","gender-selected")
+    $("#"+this.id).addClass("gender-selected")
+    state.gender = this.id.substring(this.id.length-1,this.id.length)
+  })
+
 
   $("#gender-link").click(function(){hideAll();$("#gender-tab").show()})
   $("#care-needs-link").click(function(){hideAll();$("#care-needs-tab").show()})
@@ -12,4 +36,8 @@ $( document ).ready(function() {
 
 var hideAll = function(){
   $(".tab").hide()
+}
+
+var undoSelected = function(className,selectedClassName){
+  $(className).removeClass(selectedClassName)
 }
