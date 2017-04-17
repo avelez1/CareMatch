@@ -1,0 +1,5 @@
+$("#current-tab").load("views/gender.html")
+$("#gender-link").click(function(){console.log("heyy");$("#current-tab").load("views/gender.html")})
+$("#schedule-link").click(function(){$("#current-tab").load("views/schedule.html")})
+$("#care-needs-link").click(function(){$("#current-tab").load("views/care_needs.html")})
+$("#language-link").click(function(){$("#current-tab").load("views/language.html")})
