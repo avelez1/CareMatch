@@ -16,23 +16,179 @@
       <img src="images/map.png" alt="map">
     </div>
     <div align="center" id="current-tab">
+      <div class="tab" id="gender-tab">
+
+        <button id="gender-0" class="gender-button blue btn">
+          <div class="gender-icon">
+            &#9794;
+          </div>
+          <br/>
+          Male
+        </button>
+        <button id="gender-1" class="gender-button pink btn">
+          <div class="gender-icon">
+            &#9792;
+          </div>
+          <br/>
+          Female
+        </button>
+        <button id="gender-2" class="gender-button grey btn">
+          <div class="gender-icon">
+            &#9892;
+          </div>
+          <br/>
+          No Preference
+        </button>
+      </div>
+
+      <div style="display: none" class="tab" id="schedule-tab">
+        <p>
+        Schedule
+        </p>
+      </div>
+
+      <div style="display: none" class="tab" id="language-tab">
+
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-4">
+            <div>
+              <button id="language-0" type="button" class="btn language-button">English</button>
+            </div>
+            <div>
+              <button id="language-1" type="button" class="btn language-button">Cantonese</button>
+            </div>
+            <div>
+              <button id="language-2" type="button" class="btn language-button">Spanish</button>
+            </div>
+            <div>
+              <button id="language-3" type="button" class="btn language-button">French</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <button id="language-4" type="button" class="btn language-button">Mandarin</button>
+            </div>
+            <div>
+              <button id="language-5" type="button" class="btn language-button">German</button>
+            </div>
+            <div>
+              <button id="language-6" type="button" class="btn language-button">Portuguese</button>
+            </div>
+            <div>
+              <button id="language-7" type="button" class="btn language-button">Tagalog</button>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+      <div style="display: none" class="tab" id="care-needs-tab">
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+            <div>
+              <button id="care-needs-0" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Bathing/Hygiene
+              </button>
+            </div>
+            <div>
+              <button id="care-needs-1" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Shopping
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <button id="care-needs-2" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Medicine
+              </button>
+            </div>
+            <div>
+              <button id="care-needs-3" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Transportation
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <button id="care-needs-4" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Eating
+              </button>
+            </div>
+            <div>
+              <button id="care-needs-5" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Strength Training
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div>
+              <button id="care-needs-6" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Mobility
+              </button>
+            </div>
+            <div>
+              <button id="care-needs-7" type="button" class="btn care-needs-button">
+                <div class="care-needs-icon">
+                  Icon
+                </div>
+                <br/>
+                Socializing
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
     </div>
     <div align="center" id="tabs">
       <nav aria-label="Page navigation">
         <ul class="pagination pagination-lg">
           <!--<li>-->
-            <!--<a href="#" aria-label="Previous">-->
-              <!--<span aria-hidden="true">&laquo;</span>-->
-            <!--</a>-->
+          <!--<a href="#" aria-label="Previous">-->
+          <!--<span aria-hidden="true">&laquo;</span>-->
+          <!--</a>-->
           <!--</li>-->
           <li><a id="gender-link" href="#">Gender</a></li>
           <li><a id="schedule-link" href="#">Schedule</a></li>
           <li><a id="care-needs-link" href="#">Care Needs</a></li>
           <li><a id="language-link" href="#">Language</a></li>
           <!--<li>-->
-            <!--<a href="#" aria-label="Next">-->
-              <!--<span aria-hidden="true">&raquo;</span>-->
-            <!--</a>-->
+          <!--<a href="#" aria-label="Next">-->
+          <!--<span aria-hidden="true">&raquo;</span>-->
+          <!--</a>-->
           <!--</li>-->
         </ul>
       </nav>
