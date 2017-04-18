@@ -75,7 +75,7 @@ $(sliderID).slider({
 
 
 
-        $("#slider-time").html(hours1 + ':' + minutes1);
+        $("#time-start"+sliderID.slice(-1)).html(hours1 + ':' + minutes1);
 
         var hours2 = Math.floor(ui.values[1] / 60);
         var minutes2 = ui.values[1] - (hours2 * 60);
@@ -99,7 +99,7 @@ $(sliderID).slider({
             minutes2 = minutes2 + " AM";
         }
 
-        $("#slider-time2").html(hours2 + ':' + minutes2);
+        $("#time-end"+sliderID.slice(-1)).html(hours2 + ':' + minutes2);
     }
 });
 }
