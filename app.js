@@ -33,10 +33,11 @@ $( document ).ready(function() {
     console.log(scheduleDaysNumber);
     if ($("#"+this.id).hasClass("days-selected")){
       state.scheduleDays.add(scheduleDaysNumber)
+      $("#time-range"+scheduleDaysNumber).show()
     }else{
       state.scheduleDays.delete(scheduleDaysNumber)
+      $("#time-range"+scheduleDaysNumber).hide()
     }
-    console.log(state.scheduleDays);
   })
 
 
