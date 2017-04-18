@@ -47,7 +47,9 @@ nav{
 .gender-selected {
     background-color: #2ecc71;
 }
-
+.days-selected {
+    background-color: #FFD700;
+}
 .ui-slider-horizontal {
     height: 8px;
     background: #D7D7D7;
@@ -90,4 +92,6 @@ nav{
 
 .time-range {
   width: 600px;
+}
+.schedule-button{
 }

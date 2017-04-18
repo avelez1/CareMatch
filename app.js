@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  var state = {gender:2,languages:new Set(),careNeeds:new Set()}
+  var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
   $(".language-button").click(function(e){
     $("#"+this.id).toggleClass("language-selected")
@@ -25,6 +25,18 @@ $( document ).ready(function() {
     undoSelected(".gender-button","gender-selected")
     $("#"+this.id).addClass("gender-selected")
     state.gender = this.id.substring(this.id.length-1,this.id.length)
+  })
+
+  $(".schedule-button").click(function(e){
+    $("#"+this.id).toggleClass("days-selected")
+    scheduleDaysNumber = this.id.substring(this.id.length-1,this.id.length)
+    console.log(scheduleDaysNumber);
+    if ($("#"+this.id).hasClass("days-selected")){
+      state.scheduleDays.add(scheduleDaysNumber)
+    }else{
+      state.scheduleDays.delete(scheduleDaysNumber)
+    }
+    console.log(state.scheduleDays);
   })
 
 
