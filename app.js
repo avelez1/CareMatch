@@ -30,7 +30,6 @@ $( document ).ready(function() {
   $(".schedule-button").click(function(e){
     $("#"+this.id).toggleClass("days-selected")
     scheduleDaysNumber = this.id.substring(this.id.length-1,this.id.length)
-    console.log(scheduleDaysNumber);
     if ($("#"+this.id).hasClass("days-selected")){
       state.scheduleDays.add(scheduleDaysNumber)
       $("#time-range"+scheduleDaysNumber).show()
@@ -54,7 +53,7 @@ var hideAll = function(){
 var undoSelected = function(className,selectedClassName){
   $(className).removeClass(selectedClassName)
 }
-
+//code modified from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
 $(sliderID).slider({
     range: true,

@@ -50,6 +50,8 @@ nav{
 .days-selected {
     background-color: #FFD700;
 }
+
+/*code modified from https://codepen.io/anon/pen/PmPbWd*/
 .ui-slider-horizontal {
     height: 8px;
     background: #D7D7D7;
