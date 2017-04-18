@@ -44,50 +44,14 @@ nav{
 .care-needs-selected {
     background-color: #9b59b6;
 }
+.day-selected {
+    background-color: #e74c3c;
+}
 .gender-selected {
     background-color: #2ecc71;
 }
-
-.ui-slider-horizontal {
-    height: 8px;
-    background: #D7D7D7;
-    
-}
-.ui-slider {
-    position: relative;
-    text-align: left;
-}
-
-.ui-slider .ui-slider-range {
-    position: absolute;
-    z-index: 1;
-    height: 8px;
-    font-size: .7em;
-    display: block;
-    border: 1px solid #5BA8E1;
-    box-shadow: 0 1px 0 #AAD6F6 inset;
-    background: #81B8F3;
-}
-.ui-slider .ui-slider-handle {
-    position: absolute;
-    background: #F9FBFA;
-    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6), 0 -1px 0 1px rgba(0, 0, 0, 0.15) inset, 0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
-
-}
-.ui-slider .ui-slider-handle {
-    position: absolute;
-    z-index: 2;
-    width: 18px;
-    height: 18px;
-    cursor: default;
-    cursor: pointer;
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-    top: -.4em;
-    margin-left: -.5em;
-}
-
-.time-range {
-  width: 600px;
+.slider {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
 }

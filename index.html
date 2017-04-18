@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-
   </head>
   <body>
     <h1 align="center">
@@ -47,66 +43,57 @@
       </div>
 
       <div style="display: none" class="tab" id="schedule-tab">
-        <br/>
-        <div id="time-range1" class = "time-range">
-          <p>Time Range: <span id="time-start1">9:00 AM</span> - <span id="time-end1">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range1" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range2" class = "time-range">
-          <p>Time Range: <span id="time-start2">9:00 AM</span> - <span id="time-end2">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range2" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range3" class = "time-range">
-          <p>Time Range: <span id="time-start3">9:00 AM</span> - <span id="time-end3">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range3" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range4" class = "time-range">
-          <p>Time Range: <span id="time-start4">9:00 AM</span> - <span id="time-end4">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range4" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range5" class = "time-range">
-          <p>Time Range: <span id="time-start5">9:00 AM</span> - <span id="time-end5">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range5" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range6" class = "time-range">
-          <p>Time Range: <span id="time-start6">9:00 AM</span> - <span id="time-end6">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range6" class = "slider-range"></div>
-          </div>
-        </div>
-        <br/>
-        <div id="time-range7" class = "time-range">
-          <p>Time Range: <span id="time-start7">9:00 AM</span> - <span id="time-end7">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range7" class = "slider-range"></div>
-          </div>
-        </div>
-        <script type = "text/javascript">
-          createslide("#slider-range1");
-          createslide("#slider-range2");
-          createslide("#slider-range3");
-          createslide("#slider-range4");
-          createslide("#slider-range5");
-          createslide("#slider-range6");
-          createslide("#slider-range7");
 
-    
-        </script>
+        <button id="day-0" class="day-button btn">Su</button>
+        <button id="day-1" class="day-button btn">Mo</button>
+        <button id="day-2" class="day-button btn">Tu</button>
+        <button id="day-3" class="day-button btn">We</button>
+        <button id="day-4" class="day-button btn">Th</button>
+        <button id="day-5" class="day-button btn">Fr</button>
+        <button id="day-6" class="day-button btn">Sa</button>
+
+        <div id=slider-container-0 style="display: none">
+          <div>Sunday</div>
+          <div class="slider" id="slider-0">
+          </div>
+          <span id="time-0"></span>
+        </div>
+        <div id=slider-container-1 style="display: none">
+          <div>Monday</div>
+          <div class="slider" id="slider-1">
+          </div>
+          <span id="time-1"></span>
+        </div>
+        <div id=slider-container-2 style="display: none">
+          <div>Tuesday</div>
+          <div class="slider" id="slider-2">
+          </div>
+          <span id="time-2"></span>
+        </div>
+        <div id=slider-container-3 style="display: none">
+          <div>Wednesday</div>
+          <div class="slider" id="slider-3">
+          </div>
+          <span id="time-3"></span>
+        </div>
+        <div id=slider-container-4 style="display: none">
+          <div>Thursday</div>
+          <div class="slider" id="slider-4">
+          </div>
+          <span id="time-4"></span>
+        </div>
+        <div id=slider-container-5 style="display: none">
+          <div>Friday</div>
+          <div class="slider" id="slider-5">
+          </div>
+          <span id="time-5"></span>
+        </div>
+        <div id=slider-container-6 style="display: none">
+          <div>Saturday</div>
+          <div class="slider" id="slider-6">
+          </div>
+          <span id="time-6"></span>
+        </div>
       </div>
 
       <div style="display: none" class="tab" id="language-tab">
@@ -258,7 +245,10 @@
         </ul>
       </nav>
     </div>
-
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="slider.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
