@@ -1,7 +1,31 @@
 #map{
     margin: 0 auto;
-    max-height:70%; max-width:70%;
+    background-image: url(images/map.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 37%;
+    position: relative;
+    max-height: 100%;
+    max-width: 100%; 
 }
+#mapRender {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+}
+
+#careButton1 {
+  position: relative;
+  margin-top: 85%;
+  left: 505%;
+}
+
+#careButton2 {
+  position: relative;
+  left: 805%;
+}
+
 img {
     padding: 0;
     display: block;
@@ -9,6 +33,7 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
+
 nav{
     width:50%;
     margin: 0 auto;
