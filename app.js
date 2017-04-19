@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  var state = {gender:2,languages:new Set(),careNeeds:new Set()}
+  var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
   $(".language-button").click(function(e){
     $("#"+this.id).toggleClass("language-selected")
@@ -27,6 +27,18 @@ $( document ).ready(function() {
     state.gender = this.id.substring(this.id.length-1,this.id.length)
   })
 
+  $(".schedule-button").click(function(e){
+    $("#"+this.id).toggleClass("days-selected")
+    scheduleDaysNumber = this.id.substring(this.id.length-1,this.id.length)
+    if ($("#"+this.id).hasClass("days-selected")){
+      state.scheduleDays.add(scheduleDaysNumber)
+      $("#time-range"+scheduleDaysNumber).show()
+    }else{
+      state.scheduleDays.delete(scheduleDaysNumber)
+      $("#time-range"+scheduleDaysNumber).hide()
+    }
+  })
+
 
   $("#gender-link").click(function(){hideAll();$("#gender-tab").show()})
   $("#care-needs-link").click(function(){hideAll();$("#care-needs-tab").show()})
@@ -41,7 +53,7 @@ var hideAll = function(){
 var undoSelected = function(className,selectedClassName){
   $(className).removeClass(selectedClassName)
 }
-
+//code modified from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
 $(sliderID).slider({
     range: true,

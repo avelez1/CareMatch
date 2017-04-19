@@ -72,7 +72,11 @@ nav{
 .gender-selected {
     background-color: #2ecc71;
 }
+.days-selected {
+    background-color: #FFD700;
+}
 
+/*code modified from https://codepen.io/anon/pen/PmPbWd*/
 .ui-slider-horizontal {
     height: 8px;
     background: #D7D7D7;
@@ -115,4 +119,7 @@ nav{
 
 .time-range {
   width: 600px;
+  display: None;
+}
+.schedule-button{
 }
