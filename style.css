@@ -158,3 +158,8 @@ nav{
     padding: 20px 20px 20px 20px;
     width:500px;
 }
+#Search_Q{
+    position:relative;
+    top:190px;
+    font-size: 40px;
+}
