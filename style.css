@@ -10,9 +10,7 @@
     max-width: 100%; 
 }
 
-/* the positioning of the buttons are absolutely awful
-are probably wrong at most sizes
-and don't scale or resize at all'*/
+/* the buttons don't scale or resize at all'*/
 #mapRender {
   position: absolute;
   z-index: 1;
@@ -21,15 +19,15 @@ and don't scale or resize at all'*/
 }
 
 #careButton1 {
-  position: relative;
-  left: 500%;
-  margin-top: 100%;
+  position: absolute;
+  top: 100px;
+  left: 700px;
 }
 
 #careButton2 {
-  position: relative;
-  left: 100%;
-  margin-top: 100%;
+  position: absolute;
+  top: 50px;
+  left: 1100px;
 }
 
 img {
