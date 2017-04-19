@@ -138,3 +138,28 @@ nav{
 }
 .schedule-button{
 }
+
+#Title{
+    font-family: "Times New Roman", Georgia, Serif;
+    color: #1E90FF;
+    margin: 0px;
+    font-size: 80px;
+    letter-spacing: -4px;
+    font-weight: bold;
+}
+#form{
+    position:relative;
+    top:200px;
+    border-style: solid;
+    border-color: #C0C0C0;
+    border-radius: 10px;
+    font-size: 20px;
+    align:center;
+    padding: 20px 20px 20px 20px;
+    width:500px;
+}
+#Search_Q{
+    position:relative;
+    top:190px;
+    font-size: 40px;
+}
