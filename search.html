@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CareMatchSplashPage</title>
+    <meta charset="UTF-8">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+  	</head>
+  	<body>
+  		<h1 id = "Title" align="left">
+      		Care Match
+    	</h1>
+  		<div align = "center">
+  			<input id = "form" type="text" name="search" placeholder="Search..">
+  			<script type="text/javascript">
+  				document.getElementById('form').onkeyup = function(e){
+    				if (!e) e = window.event;
+    					var keyCode = e.keyCode || e.which;
+    				if (keyCode == '13'){
+
+      					window.location.href = "index.html";
+    				}
+  				}
+  			</script>
+  		</div>
+  	
+  	
+    
+ 	 </body>
+</html>
