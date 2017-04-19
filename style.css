@@ -30,6 +30,17 @@
   left: 1100px;
 }
 
+#careButton3 {
+  position: absolute;
+  top: 10px;
+  left: 450px;
+}
+
+#careButton4 {
+  position: absolute;
+  top: 400px;
+}
+
 img {
     padding: 0;
     display: block;
