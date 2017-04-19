@@ -9,21 +9,27 @@
     max-height: 100%;
     max-width: 100%; 
 }
+
+/* the positioning of the buttons are absolutely awful
+are probably wrong at most sizes
+and don't scale or resize at all'*/
 #mapRender {
   position: absolute;
   z-index: 1;
   top: 0px;
+  left: 0px
 }
 
 #careButton1 {
   position: relative;
-  margin-top: 85%;
-  left: 505%;
+  left: 500%;
+  margin-top: 100%;
 }
 
 #careButton2 {
   position: relative;
-  left: 805%;
+  left: 100%;
+  margin-top: 100%;
 }
 
 img {

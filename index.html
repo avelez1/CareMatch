@@ -19,8 +19,44 @@
     </h1>
     <div id="map">
       <div id="mapRender">
-        <button id="careButton1" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="caregiver1">&#9792;</button>
-        <button id="careButton2" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="caregiver2">&#9794;</button>
+        <button id="careButton1" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver1">&#9792;</button>
+        <button id="careButton2" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver2">&#9794;</button>
+      </div>
+    </div>
+    <div class="modal fade" id="caregiver1" tabindex="-1" role="dialog" aria-labelledby="caregiver1Label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="caregiver1Label">Alyssa P. Hacker</h4>
+          </div>
+          <div class="modal-body">
+            <img src="images/caregiver1.jpg">
+            <div id="bio1">
+              <h5><b>Bio</b></h5> Alyssa is a therapist who specializes in helping people recover from or learn to live with paralysis. 
+              <h5><b>Care Specialties</b></h5> Medicine, Mobility, Strength Training
+              <h5><b>Languages</b></h5>English, Spanish
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="caregiver2" tabindex="-1" role="dialog" aria-labelledby="caregiver2Label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="caregiver2Label">Ben Bitdiddle</h4>
+          </div>
+          <div class="modal-body">
+            <img src="images/caregiver2.jpg">
+            <div id="bio2">
+              <h5><b>Bio</b></h5> Ben works with young adults with autism to help them learn to better navigate social situations.
+              <h5><b>Care Specialties</b></h5>Medicine, Mobility, Socializing
+              <h5><b>Languages</b></h5>English
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div align="center" id="current-tab">
