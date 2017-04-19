@@ -9,18 +9,6 @@ $( document ).ready(function() {
     }else{
       state.languages.delete(languageNumber)
     }
-    if (state.languages.size === 0 || state.languages === caregiver1languageset) {
-      $("#caregiver1").show();
-    } 
-    else {
-      $("#caregiver1").hide();
-    }
-    if (state.languages.size === 0 || state.languages === caregiver2languageset) {
-      $("#caregiver2").show();
-    }
-    else {
-      $("#caregiver2").hide();
-    }
   })
 
   $(".care-needs-button").click(function(e){
@@ -37,6 +25,17 @@ $( document ).ready(function() {
     undoSelected(".gender-button","gender-selected")
     $("#"+this.id).addClass("gender-selected")
     state.gender = this.id.substring(this.id.length-1,this.id.length)
+    console.log(state.gender)
+    if (state.gender == 0) {
+      $("#careButton2").css('display', 'inline');
+      $("#careButton1").css('display', 'none');
+    } else if (state.gender == 1) {
+      $("#careButton1").css('display', 'inline');
+      $("#careButton2").css('display', 'none');
+    } else {
+      $("#careButton1").css('display', 'inline');
+      $("#careButton2").css('display', 'inline');
+    }
   })
 
   $(".schedule-button").click(function(e){
@@ -70,6 +69,7 @@ var caregiver1languageset = new Set([0, 2]);
 var caregiver1careset = new Set([2, 5, 6]);
 var caregiver2languageset = new Set([0]);
 var caregiver2careset = new Set([2, 5, 7]);
+
 //code modified from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
 $(sliderID).slider({
