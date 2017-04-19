@@ -9,6 +9,18 @@ $( document ).ready(function() {
     }else{
       state.languages.delete(languageNumber)
     }
+    if (state.languages.size === 0 || state.languages === caregiver1languageset) {
+      $("#caregiver1").show();
+    } 
+    else {
+      $("#caregiver1").hide();
+    }
+    if (state.languages.size === 0 || state.languages === caregiver2languageset) {
+      $("#caregiver2").show();
+    }
+    else {
+      $("#caregiver2").hide();
+    }
   })
 
   $(".care-needs-button").click(function(e){
@@ -53,6 +65,11 @@ var hideAll = function(){
 var undoSelected = function(className,selectedClassName){
   $(className).removeClass(selectedClassName)
 }
+
+var caregiver1languageset = new Set([0, 2]);
+var caregiver1careset = new Set([2, 5, 6]);
+var caregiver2languageset = new Set([0]);
+var caregiver2careset = new Set([2, 5, 7]);
 //code modified from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
 $(sliderID).slider({
