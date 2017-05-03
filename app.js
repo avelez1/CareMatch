@@ -1,3 +1,5 @@
+var currentState = "gender";
+
 $( document ).ready(function() {
   var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
@@ -42,10 +44,10 @@ $( document ).ready(function() {
     }
   })
 
-  $("#gender-link").click(function(){hideAll();$("#gender-tab").show()})
-  $("#care-needs-link").click(function(){hideAll();$("#care-needs-tab").show()})
-  $("#language-link").click(function(){hideAll();$("#language-tab").show()})
-  $("#schedule-link").click(function(){hideAll();$("#schedule-tab").show()})
+  $("#gender-link").click(function(){hideAll();$("#gender-tab").show();$(".button_link").css("background-color","white");  $("#gender-link").css("background-color", "powderblue");})
+  $("#care-needs-link").click(function(){hideAll();$("#care-needs-tab").show(); $(".button_link").css("background-color","white"); $("#care-needs-link").css("background-color", "powderblue");})
+  $("#language-link").click(function(){hideAll();$("#language-tab").show(); $(".button_link").css("background-color","white"); $("#language-link").css("background-color", "powderblue");})
+  $("#schedule-link").click(function(){hideAll();$("#schedule-tab").show(); $(".button_link").css("background-color","white"); $("#schedule-link").css("background-color", "powderblue");})
 });
 
 var hideAll = function(){

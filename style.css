@@ -50,22 +50,24 @@ img {
 }
 
 nav{
-    width:50%;
+    width:100%;
     margin: 0 auto;
 }
 #current-tab{
     height:350px;
 }
 .gender-icon{
-    font-size: 500%;
+    font-size: 400%;
 }
 .gender-button{
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
+    font-size: 130%;
+
 }
 .care-needs-button{
     margin-top : 10px;
-    font-size: 150%;
+    font-size: 130%;
     width: 170px;
     height: 170px;
 }
@@ -75,20 +77,20 @@ nav{
 }
 .language-button{
     margin-top : 10px;
-    font-size: 150%;
-    width: 180px;
+    font-size: 130%;
+    width: 170px;
 }
 .language-selected {
-    background-color: lightBlue;
+    background-color: powderblue;
 }
 .care-needs-selected {
-    background-color: #9b59b6;
+    background-color: powderblue;
 }
 .gender-selected {
-    background-color: #2ecc71;
+    background-color: powderblue;
 }
 .days-selected {
-    background-color: #FFD700;
+    background-color: powderblue;
 }
 
 /*code modified from https://codepen.io/anon/pen/PmPbWd*/
@@ -139,7 +141,7 @@ nav{
 .schedule-button{
 }
 
-#Title{
+.Title{
     font-family: "Times New Roman", Georgia, Serif;
     color: #1E90FF;
     margin: 0px;
@@ -149,7 +151,7 @@ nav{
 }
 #form{
     position:relative;
-    top:200px;
+    top:210px;
     border-style: solid;
     border-color: #C0C0C0;
     border-radius: 10px;
@@ -162,4 +164,9 @@ nav{
     position:relative;
     top:190px;
     font-size: 40px;
+}
+
+#search_title{
+    position: relative;
+    top: 150px;
 }
