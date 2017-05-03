@@ -17,294 +17,294 @@
     <h1 class = "Title" align="center">
       Care Match
     </h1>
-    
-  <div class="col-md-6" align = "left">
-    <div align="center" id="tabs">
-      <nav aria-label="Page navigation">
-        <ul class="pagination pagination-lg">
-          <!--<li>-->
-          <!--<a href="#" aria-label="Previous">-->
-          <!--<span aria-hidden="true">&laquo;</span>-->
-          <!--</a>-->
-          <!--</li>-->
-          <li><a id="gender-link" class= "button_link" href="#" style="background-color:powderblue;">Gender</a></li>
-          <li><a id="schedule-link" class= "button_link" href="#">Schedule</a></li>
-          <li><a id="care-needs-link" class= "button_link" href="#">Care Needs</a></li>
-          <li><a id="language-link" class= "button_link" href="#">Language</a></li>
-          <!--<li>-->
-          <!--<a href="#" aria-label="Next">-->
-          <!--<span aria-hidden="true">&raquo;</span>-->
-          <!--</a>-->
-          <!--</li>-->
-        </ul>
-      </nav>
-    </div>
-    <div align="center" id="current-tab">
-      <div class="tab" id="gender-tab">
 
-        <button id="gender-0" class="gender-button blue btn">
-          <div class="gender-icon">
-            &#9794;
-          </div>
-          Male
-        </button>
-        <button id="gender-1" class="gender-button pink btn">
-          <div class="gender-icon">
-            &#9792;
-          </div>
-          Female
-        </button>
-        <button id="gender-2" class="gender-selected gender-button grey btn">
-          <div class="gender-icon">
-            &#9892;
-          </div>
-          No Preference
-        </button>
+    <div class="col-md-6" align = "left">
+      <div align="center" id="tabs">
+        <nav aria-label="Page navigation">
+          <ul class="pagination pagination-lg">
+            <!--<li>-->
+            <!--<a href="#" aria-label="Previous">-->
+            <!--<span aria-hidden="true">&laquo;</span>-->
+            <!--</a>-->
+            <!--</li>-->
+            <li><a id="gender-link" class= "button_link" href="#">Gender</a></li>
+            <li><a id="schedule-link" class= "button_link" href="#">Schedule</a></li>
+            <li><a id="care-needs-link" class= "button_link" href="#">Care Needs</a></li>
+            <li><a id="language-link" class= "button_link" href="#">Language</a></li>
+            <!--<li>-->
+            <!--<a href="#" aria-label="Next">-->
+            <!--<span aria-hidden="true">&raquo;</span>-->
+            <!--</a>-->
+            <!--</li>-->
+          </ul>
+        </nav>
       </div>
+      <div align="center" id="current-tab">
+        <div class="tab" id="gender-tab">
+          <h4>
+            Which gender caregiver would you prefer?
+          </h4>
 
-      <div style="display: none" class="tab" id="schedule-tab">
-        <br/>
-        <table style="width:50%" >
-        <tr align = "center">      
-          <td>
-            <div>
-              <button id="day-1" type="button" class="btn schedule-button">
-                Sun
-              </button>
+          <button id="gender-0" class="gender-button blue btn">
+            <div class="gender-icon">
+              &#9794;
             </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-2" type="button" class="btn schedule-button">
-                Mon
-              </button>
+            Male
+          </button>
+          <button id="gender-1" class="gender-button pink btn">
+            <div class="gender-icon">
+              &#9792;
             </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-3" type="button" class="btn schedule-button">
-                Tues
-              </button>
+            Female
+          </button>
+          <button id="gender-2" class="gender-selected gender-button grey btn">
+            <div class="gender-icon">
+              &#9892;
             </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-4" type="button" class="btn schedule-button">
-                Wed
-              </button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-5" type="button" class="btn schedule-button">
-               Thur
-              </button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-6" type="button" class="btn schedule-button">
-                Fri
-              </button>
-            </div>
-          </td>
-          <td>
-            <div>
-              <button id="day-7" type="button" class="btn schedule-button">
-                Sat
-              </button>
-            </div>
-          </td>
-        </tr>
+            No Preference
+          </button>
+        </div>
 
-      </table>
-        <div id="time-range1" class = "time-range">
+        <div style="display: none" class="tab" id="schedule-tab">
           <br/>
-          <p> Sunday Time Range: <span id="time-start1">9:00 AM</span> - <span id="time-end1">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range1" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range2" class = "time-range">
-          <br/>
-          <p>Monday Time Range: <span id="time-start2">9:00 AM</span> - <span id="time-end2">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range2" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range3" class = "time-range">
-          <br/>
-          <p>Tuesday Time Range: <span id="time-start3">9:00 AM</span> - <span id="time-end3">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range3" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range4" class = "time-range">
-          <br/>
-          <p>Wednesday Time Range: <span id="time-start4">9:00 AM</span> - <span id="time-end4">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range4" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range5" class = "time-range">
-          <br/>
-          <p>Thursday Time Range: <span id="time-start5">9:00 AM</span> - <span id="time-end5">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range5" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range6" class = "time-range">
-          <br/>
-          <p>Friday Time Range: <span id="time-start6">9:00 AM</span> - <span id="time-end6">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range6" class = "slider-range"></div>
-          </div>
-        </div>
-        <div id="time-range7" class = "time-range">
-          <br/>
-          <p>Saturday Time Range: <span id="time-start7">9:00 AM</span> - <span id="time-end7">5:00 PM</span> </p>
-          <div class="sliders_step1">
-            <div id="slider-range7" class = "slider-range"></div>
-          </div>
-        </div>
-        <script type = "text/javascript">
-          createslide("#slider-range1");
-          createslide("#slider-range2");
-          createslide("#slider-range3");
-          createslide("#slider-range4");
-          createslide("#slider-range5");
-          createslide("#slider-range6");
-          createslide("#slider-range7");
+          <h4>
+            On which days of the week do you need care?
+          </h4>
+          <table style="width:50%" >
+            <tr align = "center">
+              <td>
+                <div>
+                  <button id="day-1" type="button" class="btn schedule-button">
+                    Sun
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-2" type="button" class="btn schedule-button">
+                    Mon
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-3" type="button" class="btn schedule-button">
+                    Tues
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-4" type="button" class="btn schedule-button">
+                    Wed
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-5" type="button" class="btn schedule-button">
+                    Thur
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-6" type="button" class="btn schedule-button">
+                    Fri
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="day-7" type="button" class="btn schedule-button">
+                    Sat
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button id="reset-days" type="button" class="btn">
+                    Reset
+                  </button>
+                </div>
+              </td>
+            </tr>
 
-    
-        </script>
+          </table>
+          <script type="text/javascript">
+days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+for(var i = 1; i<8; i++){
+  var t = `
+        <div id="time-range${i}" class = "time-range">
+          <div class="row">
+            <div class="col-md-10">
+              <br/>
+              <p>${days[i-1]} Time Range: <span id="time-start${i}">9:00 AM</span> - <span id="time-end${i}">5:00 PM</span> </p>
+              <div class="sliders_step${i}">
+                <div id="slider-range${i}" class = "slider-range"></div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button class="btn slider-close-button" id="slider-close-${i}">&times;</button>
+            </div>
       </div>
+    </div>`
+    $("#schedule-tab").append(t);
 
-      <div style="display: none" class="tab" id="language-tab">
+  (function(i){
+    $("#slider-close-"+i).click(function(){
+      $("#day-"+i).click()
+    })
+  })(i);
+}
+$("#reset-days").click(function(){
+  for(var i = 1; i<8; i++){
+    day = $("#day-"+i)
+    if (day.hasClass("days-selected")){
+      day.click()
+    }
+  }
+})
+createslide("#slider-range1");
+createslide("#slider-range2");
+createslide("#slider-range3");
+createslide("#slider-range4");
+createslide("#slider-range5");
+createslide("#slider-range6");
+createslide("#slider-range7");
+          </script>
+        </div>
 
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-4" align = "right">
-            <div>
-              <button id="language-0" type="button" class="btn language-button">English</button>
+        <div style="display: none" class="tab" id="language-tab">
+          <h4>
+            What language(s) do you need your caregiver to speak?
+          </h4>
+
+          <div class="row">
+            <div class="col-md-2">
             </div>
-            <div>
-              <button id="language-1" type="button" class="btn language-button">Cantonese</button>
+            <div class="col-md-4" align = "right">
+              <div>
+                <button id="language-0" type="button" class="btn language-button">English</button>
+              </div>
+              <div>
+                <button id="language-1" type="button" class="btn language-button">Cantonese</button>
+              </div>
+              <div>
+                <button id="language-2" type="button" class="btn language-button">Spanish</button>
+              </div>
+              <div>
+                <button id="language-3" type="button" class="btn language-button">French</button>
+              </div>
             </div>
-            <div>
-              <button id="language-2" type="button" class="btn language-button">Spanish</button>
+            <div class="col-md-4" align = "left">
+              <div>
+                <button id="language-4" type="button" class="btn language-button">Mandarin</button>
+              </div>
+              <div>
+                <button id="language-5" type="button" class="btn language-button">German</button>
+              </div>
+              <div>
+                <button id="language-6" type="button" class="btn language-button">Portuguese</button>
+              </div>
+              <div>
+                <button id="language-7" type="button" class="btn language-button">Tagalog</button>
+              </div>
             </div>
-            <div>
-              <button id="language-3" type="button" class="btn language-button">French</button>
+            <div class="col-md-2">
             </div>
-          </div>
-          <div class="col-md-4" align = "left">
-            <div>
-              <button id="language-4" type="button" class="btn language-button">Mandarin</button>
-            </div>
-            <div>
-              <button id="language-5" type="button" class="btn language-button">German</button>
-            </div>
-            <div>
-              <button id="language-6" type="button" class="btn language-button">Portuguese</button>
-            </div>
-            <div>
-              <button id="language-7" type="button" class="btn language-button">Tagalog</button>
-            </div>
-          </div>
-          <div class="col-md-2">
           </div>
         </div>
-      </div>
-      <div style="display: none" class="tab" id="care-needs-tab">
-        <div class="row">
-
-          <div class="col-md-3">
-            <div>
-              <button id="care-needs-0" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/bathing.png" alt="bathing">
-                </div>
+        <div style="display: none" class="tab" id="care-needs-tab">
+          <h4>
+            What do you need help with?
+          </h4>
+          <div class="row">
+            <div class="col-md-3">
+              <div>
+                <button id="care-needs-0" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/bathing.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Bathing/Hygiene
+                </button>
+              </div>
+              <div>
                 <br/>
-                Bathing/Hygiene
-              </button>
+                <button id="care-needs-1" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/shopping.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Shopping
+                </button>
+              </div>
             </div>
-            <div>
-              <br/>
-              <button id="care-needs-1" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/shopping.png" alt="bathing">
-                </div>
+            <div class="col-md-3">
+              <div>
+                <button id="care-needs-2" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/medicine.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Medicine
+                </button>
+              </div>
+              <div>
                 <br/>
-                Shopping
-              </button>
+                <button id="care-needs-3" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/transportation.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Transportation
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div>
+                <button id="care-needs-4" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/eating.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Eating
+                </button>
+              </div>
+              <div>
+                <br/>
+                <button id="care-needs-5" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/strength training.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Strength Training
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div>
+                <button id="care-needs-6" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/mobility.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Mobility
+                </button>
+              </div>
+              <div>
+                <br/>
+                <button id="care-needs-7" type="button" class="btn care-needs-button">
+                  <div class="care-needs-icon">
+                    <img src="images/socializing.png" alt="bathing">
+                  </div>
+                  <br/>
+                  Socializing
+                </button>
+              </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div>
-              <button id="care-needs-2" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/medicine.png" alt="bathing">
-                </div>
-                <br/>
-                Medicine
-              </button>
-            </div>
-            <div>
-              <br/>
-              <button id="care-needs-3" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/transportation.png" alt="bathing">
-                </div>
-                <br/>
-                Transportation
-              </button>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div>
-              <button id="care-needs-4" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/eating.png" alt="bathing">
-                </div>
-                <br/>
-                Eating
-              </button>
-            </div>
-            <div>
-              <br/>
-              <button id="care-needs-5" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/strength training.png" alt="bathing">
-                </div>
-                <br/>
-                Strength Training
-              </button>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div>
-              <button id="care-needs-6" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/mobility.png" alt="bathing">
-                </div>
-                <br/>
-                Mobility
-              </button>
-            </div>
-            <div>
-              <br/>
-              <button id="care-needs-7" type="button" class="btn care-needs-button">
-                <div class="care-needs-icon">
-                  <img src="images/socializing.png" alt="bathing">
-                </div>
-                <br/>
-                Socializing
-              </button>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -389,17 +389,16 @@
           </div>
         </div>
       </div>
-    </div>
-    
-    <div id="map">
-      <div id="mapRender">
-        <button id="careButton1" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver1">Alyssa<br>&#9792;</button>
-        <button id="careButton2" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver2">Ben<br> &#9794;</button>
-        <button id="careButton3" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver3">Ivanna<br> &#9792;</button>
-        <button id="careButton4" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver4">Lem<br> &#9794;</button>
+
+      <div id="map">
+        <div id="mapRender">
+          <button id="careButton1" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver1">Alyssa<br>&#9792;</button>
+          <button id="careButton2" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver2">Ben<br> &#9794;</button>
+          <button id="careButton3" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver3">Ivanna<br> &#9792;</button>
+          <button id="careButton4" type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#caregiver4">Lem<br> &#9794;</button>
+        </div>
       </div>
     </div>
-  </div>
-    
+
   </body>
 </html>
