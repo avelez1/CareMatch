@@ -12,28 +12,23 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
-  	</head>
-  	<body>
-  		<h1 id = "search_title" class = "Title" align="center">
-      		Care Match
-    	</h1>
-  		<div align = "center">
-  			<p id="Search_Q">Where are you looking for care?</p>
-  			<input id = "form" type="text" name="search" placeholder="Location..">
-  			<script type="text/javascript">
-  				document.getElementById('form').onkeyup = function(e){
-    				if (!e) e = window.event;
-    					var keyCode = e.keyCode || e.which;
-    				if (keyCode == '13'){
-
-      					window.location.href = "index.html";
-    				}
-  				}
-  			</script>
-  		</div>
-
-  	
-  	
-    
- 	 </body>
+  </head>
+  <body>
+    <h1 id = "search_title" class = "Title" align="center">
+      Care Match
+    </h1>
+    <div align = "center">
+      <p id="Search_Q">Where are you looking for care?</p>
+      <input id = "form" type="text" name="search" placeholder="Location...">
+      <script type="text/javascript">
+        document.getElementById('form').onkeyup = function(e){
+          if (!e) e = window.event;
+          var keyCode = e.keyCode || e.which;
+          if (keyCode == '13'){
+            window.location.href = "index.html";
+          }
+        }
+      </script>
+    </div>
+  </body>
 </html>

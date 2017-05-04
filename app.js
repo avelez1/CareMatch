@@ -1,4 +1,12 @@
 var currentState = "gender";
+var currentIndex = 0
+var indices = {
+  "gender":0,
+  "schedule":1,
+  "care-needs":2,
+  "language":3
+}
+var tabNames = _.invert(indices)
 
 $( document ).ready(function() {
   var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
@@ -44,11 +52,48 @@ $( document ).ready(function() {
     }
   })
 
-  $("#gender-link").click(function(){hideAll();$("#gender-tab").show();$(".button_link").css("background-color","white");  $("#gender-link").css("background-color", "powderblue");})
-  $("#care-needs-link").click(function(){hideAll();$("#care-needs-tab").show(); $(".button_link").css("background-color","white"); $("#care-needs-link").css("background-color", "powderblue");})
-  $("#language-link").click(function(){hideAll();$("#language-tab").show(); $(".button_link").css("background-color","white"); $("#language-link").css("background-color", "powderblue");})
-  $("#schedule-link").click(function(){hideAll();$("#schedule-tab").show(); $(".button_link").css("background-color","white"); $("#schedule-link").css("background-color", "powderblue");})
+  $(".button-link").click(function(e){
+    hideAll();
+    var tabName = this.id.substring(0,this.id.length-5)
+    currentIndex = indices[tabName]
+    $("#"+tabName+"-tab").show();
+    $(".button-link").css("background-color","white");
+    $("#"+this.id).css("background-color", "powderblue");
+  })
+  $("#back-tab").click(function(){
+    cycleTab(-1)
+  })
+  $("#forward-tab").click(function(){
+    cycleTab(1)
+  })
+  window.addEventListener("keydown", function(e) {
+      // space and arrow keys
+      if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+          e.preventDefault();
+      }
+  }, false);
+  document.onkeyup = function(e){
+    e.preventDefault()
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == '37'){
+      cycleTab(-1)
+    }else if(keyCode == '39'){
+      cycleTab(1)
+    }
+  }
 });
+
+var cycleTab = function(direction){
+  if (1==direction && currentIndex<3 || -1==direction && currentIndex>0){
+    currentIndex+=direction
+    hideAll();
+    var tabName = tabNames[currentIndex]
+    $("#"+tabName+"-tab").show();
+    $(".button-link").css("background-color","white");
+    $("#"+tabName+"-link").css("background-color", "powderblue");
+  }
+}
 
 var hideAll = function(){
   $(".tab").hide()
@@ -69,13 +114,13 @@ var caregiver4careset = new Set(["2", "6", "7"]);
 
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 Set.prototype.isSuperset = function(subset) {
-    for (var elem of subset) {
-      console.log(elem);
-        if (!this.has(elem)) {
-            return false;
-        }
+  for (var elem of subset) {
+    console.log(elem);
+    if (!this.has(elem)) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
 function drawState(state) {
@@ -103,63 +148,63 @@ function drawState(state) {
 
 //code modified from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
-$(sliderID).slider({
+  $(sliderID).slider({
     range: true,
     min: 0,
     max: 1440,
     step: 15,
     values: [540, 1020],
     slide: function (e, ui) {
-        var hours1 = Math.floor(ui.values[0] / 60);
-        var minutes1 = ui.values[0] - (hours1 * 60);
+      var hours1 = Math.floor(ui.values[0] / 60);
+      var minutes1 = ui.values[0] - (hours1 * 60);
 
-        if (hours1.length == 1) hours1 = '0' + hours1;
-        if (minutes1.length == 1) minutes1 = '0' + minutes1;
-        if (minutes1 == 0) minutes1 = '00';
-        if (hours1 >= 12) {
-            if (hours1 == 12) {
-                hours1 = hours1;
-                minutes1 = minutes1 + " PM";
-            } else {
-                hours1 = hours1 - 12;
-                minutes1 = minutes1 + " PM";
-            }
+      if (hours1.length == 1) hours1 = '0' + hours1;
+      if (minutes1.length == 1) minutes1 = '0' + minutes1;
+      if (minutes1 == 0) minutes1 = '00';
+      if (hours1 >= 12) {
+        if (hours1 == 12) {
+          hours1 = hours1;
+          minutes1 = minutes1 + " PM";
         } else {
-            hours1 = hours1;
-            minutes1 = minutes1 + " AM";
+          hours1 = hours1 - 12;
+          minutes1 = minutes1 + " PM";
         }
-        if (hours1 == 0) {
-            hours1 = 12;
-            minutes1 = minutes1;
-        }
+      } else {
+        hours1 = hours1;
+        minutes1 = minutes1 + " AM";
+      }
+      if (hours1 == 0) {
+        hours1 = 12;
+        minutes1 = minutes1;
+      }
 
 
 
-        $("#time-start"+sliderID.slice(-1)).html(hours1 + ':' + minutes1);
+      $("#time-start"+sliderID.slice(-1)).html(hours1 + ':' + minutes1);
 
-        var hours2 = Math.floor(ui.values[1] / 60);
-        var minutes2 = ui.values[1] - (hours2 * 60);
+      var hours2 = Math.floor(ui.values[1] / 60);
+      var minutes2 = ui.values[1] - (hours2 * 60);
 
-        if (hours2.length == 1) hours2 = '0' + hours2;
-        if (minutes2.length == 1) minutes2 = '0' + minutes2;
-        if (minutes2 == 0) minutes2 = '00';
-        if (hours2 >= 12) {
-            if (hours2 == 12) {
-                hours2 = hours2;
-                minutes2 = minutes2 + " PM";
-            } else if (hours2 == 24) {
-                hours2 = 11;
-                minutes2 = "59 PM";
-            } else {
-                hours2 = hours2 - 12;
-                minutes2 = minutes2 + " PM";
-            }
+      if (hours2.length == 1) hours2 = '0' + hours2;
+      if (minutes2.length == 1) minutes2 = '0' + minutes2;
+      if (minutes2 == 0) minutes2 = '00';
+      if (hours2 >= 12) {
+        if (hours2 == 12) {
+          hours2 = hours2;
+          minutes2 = minutes2 + " PM";
+        } else if (hours2 == 24) {
+          hours2 = 11;
+          minutes2 = "59 PM";
         } else {
-            hours2 = hours2;
-            minutes2 = minutes2 + " AM";
+          hours2 = hours2 - 12;
+          minutes2 = minutes2 + " PM";
         }
+      } else {
+        hours2 = hours2;
+        minutes2 = minutes2 + " AM";
+      }
 
-        $("#time-end"+sliderID.slice(-1)).html(hours2 + ':' + minutes2);
+      $("#time-end"+sliderID.slice(-1)).html(hours2 + ':' + minutes2);
     }
-});
+  });
 }
