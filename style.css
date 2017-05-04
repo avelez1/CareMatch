@@ -152,7 +152,9 @@ nav{
     background-color: #e74c3c;
     margin-left: 40px;
 }
-
+.splash{
+    background-image: url("images/splashmap.png");
+}
 .Title{
     /*font-family: "Times New Roman", Georgia, Serif;*/
     color: #1E90FF;
