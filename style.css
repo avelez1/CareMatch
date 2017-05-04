@@ -41,6 +41,10 @@
   top: 400px;
 }
 
+.button-link{
+    color: black;
+}
+
 img {
     padding: 0;
     display: block;
@@ -178,3 +182,4 @@ nav{
     position: relative;
     top: 150px;
 }
+
