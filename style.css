@@ -183,3 +183,18 @@ nav{
     top: 150px;
 }
 
+.modal-content{
+    width:400px;
+    margin: auto;
+    vertical-align: middle;
+
+}
+
+.modal-header{
+    height: 60px;
+}
+
+#message_text{
+    width :350px;
+}
+
