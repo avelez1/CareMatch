@@ -1,3 +1,6 @@
+body{
+    font-family:"Open Sans";
+}
 #map{
     margin: 0 auto;
     background-image: url(images/map.png);
@@ -8,6 +11,11 @@
     position: relative;
     max-height: 100%;
     max-width: 100%;
+}
+
+#summary{
+    height: 40px;
+    margin-left: 50px;
 }
 
 /* the buttons don't scale or resize at all'*/
@@ -148,8 +156,13 @@ nav{
     margin-top: 40px;
     background-color: #e74c3c;
 }
-#reset-days{
+.red{
     background-color: #e74c3c;
+}
+#reset-care-needs{
+    margin-left: 40px;
+}
+#reset-days{
     margin-left: 40px;
 }
 .splash{
