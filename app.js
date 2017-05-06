@@ -6,10 +6,35 @@ var indices = {
   "care-needs":2,
   "language":3
 }
+var languages = {
+  "English":0,
+  "Cantonese":1,
+  "Spanish":2,
+  "French":3,
+  "Mandarin":4,
+  "German":5,
+  "Portuguese":6,
+  "Tagalog":7
+}
+var careNeeds = {
+  "Bathing/Hygiene":0,
+  "Shopping":1,
+  "Medicine":2,
+  "Transportation":3,
+  "Eating":4,
+  "Strength Training":5,
+  "Mobility":6,
+  "Socializing":7,
+}
+var genders = {
+  "Male":0,
+  "Female":1,
+  "No Preference":2
+}
 var tabNames = _.invert(indices)
+var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
 $( document ).ready(function() {
-  var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
   $(".language-button").click(function(e){
     $("#"+this.id).toggleClass("language-selected")
@@ -51,6 +76,25 @@ $( document ).ready(function() {
       $("#time-range"+scheduleDaysNumber).hide()
     }
   })
+
+  $("#reset-languages").click(function(){
+    for(var i = 0; i<8; i++){
+      language = $("#language-"+i)
+      if (language.hasClass("language-selected")){
+        language.click()
+      }
+    }
+  })
+
+  $("#reset-care-needs").click(function(){
+    for(var i = 0; i<8; i++){
+      careNeed = $("#care-needs-"+i)
+      if (careNeed.hasClass("care-needs-selected")){
+        careNeed.click()
+      }
+    }
+  })
+
 
   $(".button-link").click(function(e){
     hideAll();
@@ -115,7 +159,6 @@ var caregiver4careset = new Set(["2", "6", "7"]);
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 Set.prototype.isSuperset = function(subset) {
   for (var elem of subset) {
-    console.log(elem);
     if (!this.has(elem)) {
       return false;
     }
@@ -124,29 +167,73 @@ Set.prototype.isSuperset = function(subset) {
 }
 
 function drawState(state) {
+  var counter = 0;
   if ((state.gender == 1 || state.gender == 2) && caregiver1languageset.isSuperset(state.languages) && caregiver1careset.isSuperset(state.careNeeds)) {
     $("#careButton1").css('display', 'inline');
   } else {
     $("#careButton1").css('display', 'none');
+    counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver2languageset.isSuperset(state.languages) && caregiver2careset.isSuperset(state.careNeeds)) {
     $("#careButton2").css('display', 'inline');
   } else {
     $("#careButton2").css('display', 'none');
+    counter += 1;
   }
   if ((state.gender == 1 || state.gender == 2) && caregiver3languageset.isSuperset(state.languages) && caregiver3careset.isSuperset(state.careNeeds)) {
     $("#careButton3").css('display', 'inline');
   } else {
     $("#careButton3").css('display', 'none');
+    counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver4languageset.isSuperset(state.languages) && caregiver4careset.isSuperset(state.careNeeds)) {
     $("#careButton4").css('display', 'inline');
   } else {
     $("#careButton4").css('display', 'none');
+    counter += 1;
   }
+  console.log(counter);
+  var modal = document.getElementById('myModal');
+  if(counter == 4){
+    $("#myModal").modal('show');
+
+  }
+  else{
+    modal.style.display = "hidden";
+  }
+
+  var summary = "<b>Gender:</b> "
+  summary+= _.invert(genders)[state.gender]
+  summary+= getListString(state.careNeeds,careNeeds)
+  summary+= getListString(state.languages,languages)
+  document.getElementById("summary").innerHTML = summary
 }
 
-//code modified from https://codepen.io/anon/pen/PmPbWd
+
+var getListString =function(set,lookup){
+  ret = ""
+  if (set.size==0){
+    return ""
+  }else{
+    var maxIndex = set.size
+    if (set.size>3){
+      maxIndex = 3
+    }
+    ret+="<br>"
+    ret+="  <b>Languages:</b> "
+    Array.from(set).slice(0,maxIndex+1).forEach(function(elt){
+      ret += _.invert(lookup)[elt]
+      ret += ", "
+    })
+    ret = ret.substring(0,ret.length-2)
+    if (set.size>4){
+      ret+="..."
+    }
+  }
+  return ret
+}
+
+// code stolen from https://codepen.io/anon/pen/PmPbWd
 function createslide(sliderID){
   $(sliderID).slider({
     range: true,
