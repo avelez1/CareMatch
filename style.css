@@ -1,3 +1,4 @@
+
 body{
     font-family:"Open Sans";
 }
@@ -7,8 +8,7 @@ body{
     margin-left: 50px;
 }
 
-/* the buttons don't scale or resize at all'*/
-#mapRender {
+/* #mapRender {
   position: absolute;
   z-index: 1;
   top: 0px;
@@ -36,7 +36,13 @@ body{
 #careButton4 {
   position: absolute;
   top: 400px;
-}
+} */
+
+#map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
 
 .button-link{
     color: black;
