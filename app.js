@@ -157,7 +157,8 @@ var map, alyssaMarker, benMarker, ivannaMarker, lemMarker;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
-    center: harvardBridge
+    center: harvardBridge,
+    keyboardShortcuts: false
   }); 
   alyssaMarker = new google.maps.Marker({
     position: alyssaLocation,
@@ -235,7 +236,6 @@ function drawState(state) {
     lemMarker.setMap(null);
     counter += 1;
   }
-  console.log(counter);
   var modal = document.getElementById('myModal');
   if(counter == 4){
     $("#myModal").modal('show');
