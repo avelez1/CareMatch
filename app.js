@@ -147,6 +147,49 @@ var undoSelected = function(className,selectedClassName){
   $(className).removeClass(selectedClassName)
 }
 
+
+var harvardBridge = {lat: 42.3545392, lng: -71.09164};
+var alyssaLocation = {lat: 42.362416, lng: -71.063582};
+var benLocation = {lat: 42.351241, lng: -71.079019};
+var ivannaLocation = {lat: 42.357172, lng: -71.110556};
+var lemLocation = {lat: 42.361191, lng: -71.086576};
+var map, alyssaMarker, benMarker, ivannaMarker, lemMarker;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: harvardBridge
+  }); 
+  alyssaMarker = new google.maps.Marker({
+    position: alyssaLocation,
+    map: map
+  });
+  benMarker = new google.maps.Marker({
+    position: benLocation,
+    map: map
+  });
+  ivannaMarker = new google.maps.Marker({
+    position: ivannaLocation,
+    map: map
+  });
+  lemMarker = new google.maps.Marker({
+    position: lemLocation,
+    map: map
+  });
+
+  google.maps.event.addListener(alyssaMarker, 'click', function() {
+    $('#caregiver1').modal('show');
+  });
+  google.maps.event.addListener(benMarker, 'click', function() {
+    $('#caregiver2').modal('show');
+  });
+  google.maps.event.addListener(ivannaMarker, 'click', function() {
+    $('#caregiver3').modal('show');
+  });
+  google.maps.event.addListener(lemMarker, 'click', function() {
+    $('#caregiver4').modal('show')
+  });
+};
+
 var caregiver1languageset = new Set(["0", "2"]);
 var caregiver1careset = new Set(["2", "5", "6"]);
 var caregiver2languageset = new Set(["0"]);
@@ -169,27 +212,27 @@ Set.prototype.isSuperset = function(subset) {
 function drawState(state) {
   var counter = 0;
   if ((state.gender == 1 || state.gender == 2) && caregiver1languageset.isSuperset(state.languages) && caregiver1careset.isSuperset(state.careNeeds)) {
-    window.alyssaMarker.setMap(map);
+    alyssaMarker.setMap(map);
   } else {
-    window.alyssaMarker.setMap(null);
+    alyssaMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver2languageset.isSuperset(state.languages) && caregiver2careset.isSuperset(state.careNeeds)) {
-    window.benMarker.setMap(map);
+    benMarker.setMap(map);
   } else {
-    window.benMarker.setMap(null);
+    benMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 1 || state.gender == 2) && caregiver3languageset.isSuperset(state.languages) && caregiver3careset.isSuperset(state.careNeeds)) {
-    window.ivannaMarker.setMap(map);
+    ivannaMarker.setMap(map);
   } else {
-    window.ivannaMarker.setMap(null);
+    ivannaMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver4languageset.isSuperset(state.languages) && caregiver4careset.isSuperset(state.careNeeds)) {
-    window.lemMarker.setMap(map);
+    lemMarker.setMap(map);
   } else {
-    window.lemMarker.setMap(null);
+    lemMarker.setMap(null);
     counter += 1;
   }
   console.log(counter);
