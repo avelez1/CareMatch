@@ -17,24 +17,42 @@
   </head>
   <body class="splash">
 
-  	<h1 id = "search_title" class = "Title" align="center">
-      	Care Match
+    <h1 id = "search_title" class = "Title" align="center">
+      Care Match
     </h1>
 
-    <div id = "location_container" align = "center">    </div>
+    <div align = "center">
+      <p id="Search_Q">Where are you looking for care?</p>
+      <script type="text/javascript">
+document.getElementById('autocomplete').onkeyup = function(e){
+  if (!e) e = window.event;
+  var keyCode = e.keyCode || e.which;
+  if (keyCode == '13'){
 
-      <div id="locationField" >
-        <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
-      </div>
+    window.location.href = "index.html";
+  }
+}
+      </script>
+    </div>
+
+    <div id="locationField" class="input-group">
+      <input id="autocomplete" class="form-control" placeholder="Enter address" onFocus="geolocate()" type="text"></input>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="search-button">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>
+
 
 
     <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+// This example requires the Places library. Include the libraries=places
+<!--// parameter when you first load the API. For example:-->
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
       var placeSearch, autocomplete;
       var componentForm = {
@@ -86,22 +104,9 @@
           });
         }
       }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3B5rQj_5nYSB8-sAOOfdtDNTieQtqwJM&libraries=places&callback=initAutocomplete"
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3B5rQj_5nYSB8-sAOOfdtDNTieQtqwJM&libraries=places&callback=initAutocomplete"
         async defer>
-    </script>
-  	<div align = "center">
-  		<p id="Search_Q">Where are you looking for care?</p>
-  		<script type="text/javascript">
-  			document.getElementById('autocomplete').onkeyup = function(e){
-    			if (!e) e = window.event;
-    				var keyCode = e.keyCode || e.which;
-    			if (keyCode == '13'){
-
-      				window.location.href = "index.html";
-    			}
-  			}
-  		</script>
-  	</div>
+</script>
   </body>
 </html>

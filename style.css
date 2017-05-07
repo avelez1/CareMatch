@@ -1,4 +1,3 @@
-
 body{
     font-family:"Open Sans";
 }
@@ -196,21 +195,14 @@ nav{
 }
 
 
-#locationField, #controls {
-    position: absolute;
-    top:450px;
-    width:480px;
+#locationField {
+    top:210px;
+    width:40%;
+    text-align:center;
+    margin: 0 auto;
 }
 
 
-#autocomplete {
-    width: 480px;
-    position: fixed;
-    top: 360px;
-    left: 50%;
-    margin-left: -240px;
-    font-size: 20px;
-}
 .label {
     text-align: right;
     font-weight: bold;
