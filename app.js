@@ -1,3 +1,4 @@
+var place;
 var currentState = "gender";
 var currentIndex = 0
 var indices = {
@@ -147,20 +148,11 @@ var undoSelected = function(className,selectedClassName){
   $(className).removeClass(selectedClassName)
 }
 
-/*var input = document.getElementById('autocomplete');
-var autocomplete = new google.maps.places.Autocomplete(input);
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
-            var place = autocomplete.getPlace();
-            document.getElementById('city2').value = place.name;
-            document.getElementById('cityLat').value = place.geometry.location.lat();
-            document.getElementById('cityLng').value = place.geometry.location.lng();*/
-
-var harvardBridge = {lat: 42.3545392, lng: -71.09164};
-var centerLocation = harvardBridge;
+var currentLocation = {lat: parseFloat(sessionStorage.getItem("latitude")), lng: parseFloat(sessionStorage.getItem("longitude"))};
+var centerLocation = currentLocation;
 var mapHeight = 0.02
 var mapWidth = 0.04
 var alyssaLocation = {lat: centerLocation.lat+mapHeight*0.2, lng: centerLocation.lng+mapWidth*-0.3};
-console.log(alyssaLocation)
 var benLocation = {lat: centerLocation.lat+mapHeight*-0.2, lng: centerLocation.lng+mapWidth*+0.4};
 var ivannaLocation = {lat: centerLocation.lat+mapHeight*0.3, lng: centerLocation.lng+mapWidth*+0.5};
 var lemLocation = {lat: centerLocation.lat-mapHeight*0.2, lng: centerLocation.lng+mapWidth*+0.1};
