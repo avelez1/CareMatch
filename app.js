@@ -169,27 +169,27 @@ Set.prototype.isSuperset = function(subset) {
 function drawState(state) {
   var counter = 0;
   if ((state.gender == 1 || state.gender == 2) && caregiver1languageset.isSuperset(state.languages) && caregiver1careset.isSuperset(state.careNeeds)) {
-    $("#careButton1").css('display', 'inline');
+    window.alyssaMarker.setMap(map);
   } else {
-    $("#careButton1").css('display', 'none');
+    window.alyssaMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver2languageset.isSuperset(state.languages) && caregiver2careset.isSuperset(state.careNeeds)) {
-    $("#careButton2").css('display', 'inline');
+    window.benMarker.setMap(map);
   } else {
-    $("#careButton2").css('display', 'none');
+    window.benMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 1 || state.gender == 2) && caregiver3languageset.isSuperset(state.languages) && caregiver3careset.isSuperset(state.careNeeds)) {
-    $("#careButton3").css('display', 'inline');
+    window.ivannaMarker.setMap(map);
   } else {
-    $("#careButton3").css('display', 'none');
+    window.ivannaMarker.setMap(null);
     counter += 1;
   }
   if ((state.gender == 0 || state.gender == 2) && caregiver4languageset.isSuperset(state.languages) && caregiver4careset.isSuperset(state.careNeeds)) {
-    $("#careButton4").css('display', 'inline');
+    window.lemMarker.setMap(map);
   } else {
-    $("#careButton4").css('display', 'none');
+    window.lemMarker.setMap(null);
     counter += 1;
   }
   console.log(counter);
