@@ -156,16 +156,21 @@ var autocomplete = new google.maps.places.Autocomplete(input);
             document.getElementById('cityLng').value = place.geometry.location.lng();*/
 
 var harvardBridge = {lat: 42.3545392, lng: -71.09164};
-var alyssaLocation = {lat: 42.362416, lng: -71.063582};
-var benLocation = {lat: 42.351241, lng: -71.079019};
-var ivannaLocation = {lat: 42.357172, lng: -71.110556};
-var lemLocation = {lat: 42.361191, lng: -71.086576};
+var centerLocation = harvardBridge;
+var mapHeight = 0.02
+var mapWidth = 0.04
+var alyssaLocation = {lat: centerLocation.lat+mapHeight*0.2, lng: centerLocation.lng+mapWidth*-0.3};
+console.log(alyssaLocation)
+var benLocation = {lat: centerLocation.lat+mapHeight*-0.2, lng: centerLocation.lng+mapWidth*+0.4};
+var ivannaLocation = {lat: centerLocation.lat+mapHeight*0.3, lng: centerLocation.lng+mapWidth*+0.5};
+var lemLocation = {lat: centerLocation.lat-mapHeight*0.2, lng: centerLocation.lng+mapWidth*+0.1};
 var map, alyssaMarker, benMarker, ivannaMarker, lemMarker;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
-    center: harvardBridge
-  }); 
+    center: centerLocation,
+    keyboardShortcuts: false
+  });
   alyssaMarker = new google.maps.Marker({
     position: alyssaLocation,
     map: map
@@ -242,7 +247,6 @@ function drawState(state) {
     lemMarker.setMap(null);
     counter += 1;
   }
-  console.log(counter);
   var modal = document.getElementById('myModal');
   if(counter == 4){
     $("#myModal").modal('show');
