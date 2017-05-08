@@ -45,8 +45,8 @@ $( document ).ready(function() {
     }else{
       state.languages.delete(languageNumber)
     }
-    drawState(state);
-  })
+      drawState(state);
+    })
 
   $(".care-needs-button").click(function(e){
     $("#"+this.id).toggleClass("care-needs-selected")
@@ -57,6 +57,7 @@ $( document ).ready(function() {
       state.careNeeds.delete(careNeedsNumber)
     }
     drawState(state);
+    
   })
 
   $(".gender-button").click(function(e){
@@ -64,6 +65,7 @@ $( document ).ready(function() {
     $("#"+this.id).addClass("gender-selected")
     state.gender = this.id.substring(this.id.length-1,this.id.length)
     drawState(state);
+    
   })
 
   $(".schedule-button").click(function(e){
@@ -82,18 +84,24 @@ $( document ).ready(function() {
     for(var i = 0; i<8; i++){
       language = $("#language-"+i)
       if (language.hasClass("language-selected")){
-        language.click()
+        language.toggleClass("language-selected")
+        languageNumber = String(i);
+        state.languages.delete(languageNumber)
       }
     }
+    drawState(state);
   })
 
   $("#reset-care-needs").click(function(){
     for(var i = 0; i<8; i++){
       careNeed = $("#care-needs-"+i)
       if (careNeed.hasClass("care-needs-selected")){
-        careNeed.click()
+        careNeed.toggleClass("care-needs-selected")
+        careNeedsNumber = String(i);
+        state.careNeeds.delete(careNeedsNumber)
+        }
       }
-    }
+    drawState(state);
   })
 
 
@@ -235,6 +243,21 @@ Set.prototype.isSuperset = function(subset) {
     }
   }
   return true;
+}
+
+var noMatches =function showModal(){
+  var numCaregivers = 4;
+  var numDisplayed = 0
+  for(var i = 0; i <numCaregivers; i++){
+    if($("#caregiver"+i).hasClass('in')){
+      numDisplayed+=1;
+    }
+
+  }
+  if(numCaregivers == numDisplayed){
+    return true;
+  }
+  return false;
 }
 
 function drawState(state) {
