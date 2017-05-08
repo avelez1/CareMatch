@@ -101,8 +101,8 @@ $( document ).ready(function() {
     var tabName = this.id.substring(0,this.id.length-5)
     currentIndex = indices[tabName]
     $("#"+tabName+"-tab").show();
-    $(".button-link").css("background-color","white");
-    $("#"+this.id).css("background-color", "powderblue");
+    $(".button-link").removeClass("selected");
+    $("#"+tabName+ "-link").addClass("selected");
   })
   $("#back-tab").click(function(){
     cycleTab(-1)
@@ -129,13 +129,19 @@ $( document ).ready(function() {
 });
 
 var cycleTab = function(direction){
-  if (1==direction && currentIndex<3 || -1==direction && currentIndex>0){
+  if (1==direction || -1==direction ){
     currentIndex+=direction
+    if(currentIndex <0){
+      currentIndex = 3;
+    }
+    if(currentIndex >3){
+      currentIndex = 0
+    }
     hideAll();
     var tabName = tabNames[currentIndex]
     $("#"+tabName+"-tab").show();
-    $(".button-link").css("background-color","white");
-    $("#"+tabName+"-link").css("background-color", "powderblue");
+    $(".button-link").removeClass("selected");
+    $("#"+tabName+ "-link").addClass("selected");
   }
 }
 

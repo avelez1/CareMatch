@@ -3,6 +3,7 @@ body{
 }
 a{
     color: black !important;
+
 }
 
 #summary{
@@ -12,13 +13,14 @@ a{
 
 #map {
     width: 100%;
-    height: 400px;
+    height: calc(100vh - 145px);  
     background-color: grey;
 }
 
-.button-link{
-    color: black;
+.selected{
+  background-color: powderblue !important;
 }
+
 
 .image {
     padding: 0;
@@ -34,6 +36,9 @@ nav{
 }
 
 .btn{
+  background-color: white;
+  border-width: 2px;
+  border-color: black;
 }
 
 
@@ -64,6 +69,7 @@ nav{
     font-size: 130%;
     width: 170px;
 }
+
 .language-selected {
     background-color: powderblue;
 }
@@ -75,6 +81,11 @@ nav{
 }
 .days-selected {
     background-color: powderblue;
+}
+..pagination-lg::selection {
+    color: red; 
+    background: yellow;
+    background-color: powderblue !important;
 }
 
 /*code modified from https://codepen.io/anon/pen/PmPbWd*/
