@@ -43,7 +43,7 @@ nav{
 
 
 #current-tab{
-    height:350px;
+    height:calc(100vh-300px);
 }
 .gender-icon{
     font-size: 400%;
