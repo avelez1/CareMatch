@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -26,9 +27,9 @@
     </div>
 
     <div id="locationField" class="input-group">
-      <input id="autocomplete" class="form-control" placeholder="Enter address" onFocus="geolocate()" type="text"></input>
+      <input id="searchbox" class="form-control" placeholder="Enter address" onFocus="geolocate()"></input>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" id="search-button" onclick = "window.location.href = 'index.html';">
+        <button class="btn btn-default" type="button" id="search-button" onclick = "setTimeout(function(){ window.location.href = &quot;index.html&quot;;},200)">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </span>
@@ -41,7 +42,7 @@
 <!--// parameter when you first load the API. For example:-->
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
+      var placeSearch, searchBox;
       var componentForm = {
         street_number: 'short_name',
         route: 'long_name',
@@ -54,20 +55,22 @@
       function initAutocomplete() {
         // Create the autocomplete object, restricting the search to geographical
         // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        searchBox = new google.maps.places.SearchBox(
+            /** @type {!HTMLInputElement} */(document.getElementById('searchbox')),
             {types: ['geocode']});
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
+        searchBox.addListener('places_changed', fillInAddress);
       }
 
       function fillInAddress() {
         // Get the place details from the autocomplete object.
-        place = autocomplete.getPlace();
+        place = searchBox.getPlaces()[0];
+        console.log(place.formatted_address)
         sessionStorage.setItem("latitude", place.geometry.location.lat());
         sessionStorage.setItem("longitude", place.geometry.location.lng());
+        sessionStorage.setItem("address", place.formatted_address);
         console.log("set storage");
       }
 
@@ -84,22 +87,23 @@
               center: geolocation,
               radius: position.coords.accuracy
             });
-            autocomplete.setBounds(circle.getBounds());
+            searchBox.setBounds(circle.getBounds());
           });
         }
       }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3B5rQj_5nYSB8-sAOOfdtDNTieQtqwJM&libraries=places&callback=initAutocomplete"
         async defer>
-    </script>
-    <script type="text/javascript">
-        document.getElementById('autocomplete').onkeyup = function(e){
-            if (!e) e = window.event;
-                var keyCode = e.keyCode || e.which;
-            if (keyCode == '13'){
-                window.location.href = "index.html";
-            }
-        }
-    </script>
+</script>
+<script type="text/javascript">
+document.getElementById('searchbox').onkeyup = function(e){
+  if (!e) e = window.event;
+  var keyCode = e.keyCode || e.which;
+  if (keyCode == '13'){
+    // Just a short timeout to make sure we grab the location
+    setTimeout(function(){ window.location.href = "index.html";},200)
+  }
+}
+</script>
   </body>
 </html>
