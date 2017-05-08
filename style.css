@@ -205,7 +205,6 @@ nav{
     width :350px;
 }
 
-
 #locationField {
     top:210px;
     width:40%;
@@ -213,6 +212,11 @@ nav{
     margin: 0 auto;
 }
 
+#searchButton {
+  position: relative;
+  padding: 10px;
+  left: 100%;
+}
 
 .label {
     text-align: right;
