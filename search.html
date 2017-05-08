@@ -68,6 +68,7 @@
         place = autocomplete.getPlace();
         sessionStorage.setItem("latitude", place.geometry.location.lat());
         sessionStorage.setItem("longitude", place.geometry.location.lng());
+        sessionStorage.setItem("address", place.formatted_address);
         console.log("set storage");
       }
 
