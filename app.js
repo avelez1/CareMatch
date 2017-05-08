@@ -36,6 +36,7 @@ var tabNames = _.invert(indices)
 var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
 $( document ).ready(function() {
+  $("#location-tag").html(sessionStorage.getItem("address"))
 
   $(".language-button").click(function(e){
     $("#"+this.id).toggleClass("language-selected")
