@@ -100,7 +100,6 @@ $( document ).ready(function() {
         state.careNeeds.delete(careNeedsNumber)
         }
       }
-    }
     drawState(state);
   })
 
