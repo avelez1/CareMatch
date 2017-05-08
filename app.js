@@ -163,27 +163,45 @@ var benLocation = {lat: centerLocation.lat+mapHeight*-0.2, lng: centerLocation.l
 var ivannaLocation = {lat: centerLocation.lat+mapHeight*0.3, lng: centerLocation.lng+mapWidth*+0.5};
 var lemLocation = {lat: centerLocation.lat-mapHeight*0.2, lng: centerLocation.lng+mapWidth*+0.1};
 var map, alyssaMarker, benMarker, ivannaMarker, lemMarker;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: centerLocation,
     keyboardShortcuts: false
   });
+  
+  var alyssaIcon = new google.maps.MarkerImage(
+  'images/caregiver1.jpg',
+  null, /* size is determined at runtime */
+  null, /* origin is 0,0 */
+  null, /* anchor is bottom center of the scaled image */
+  new google.maps.Size(102, 68)
+  ); 
+  
   alyssaMarker = new google.maps.Marker({
     position: alyssaLocation,
-    map: map
+    map: map,
+    title: "Alyssa P. Hacker",
+    icon: alyssaIcon
   });
   benMarker = new google.maps.Marker({
     position: benLocation,
-    map: map
+    map: map,
+    title: "Ben Bitdiddle",
+    /* icon: 'images/caregiver2.jpg' */
   });
   ivannaMarker = new google.maps.Marker({
     position: ivannaLocation,
-    map: map
+    map: map,
+    title: "Ivanna D. Bugyu",
+    /* icon: 'images/caregiver3.jpg' */
   });
   lemMarker = new google.maps.Marker({
     position: lemLocation,
-    map: map
+    map: map,
+    title: "Lem E. Tweakit",
+    /* icon: 'images/caregiver4.jpg' */
   });
 
   google.maps.event.addListener(alyssaMarker, 'click', function() {
