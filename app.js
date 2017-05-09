@@ -32,6 +32,16 @@ var genders = {
   "Female":1,
   "No Preference":2
 }
+var sched_days = {
+  "Sunday": 1,
+  "Monday":2,
+  "Tuesday":3,
+  "Wednesday":4,
+  "Thursday":5,
+  "Friday":6,
+  "Saturday":7
+}
+
 var tabNames = _.invert(indices)
 var state = {gender:2,languages:new Set(),careNeeds:new Set(), scheduleDays:new Set()}
 
@@ -79,6 +89,7 @@ $( document ).ready(function() {
       state.scheduleDays.delete(scheduleDaysNumber)
       $("#time-range"+scheduleDaysNumber).hide()
     }
+    drawState(state);
   })
 
   $("#reset-languages").click(function(){
@@ -299,8 +310,12 @@ function drawState(state) {
     modal.style.display = "hidden";
   }
 
+  console.log(state.scheduleDays)
+  console.log(state.careNeeds)
+
   var summary = "<b>Gender:</b> "
   summary+= _.invert(genders)[state.gender]
+  summary+= getListString("Schedule", state.scheduleDays, sched_days)
   summary+= getListString("Care Needs", state.careNeeds,careNeeds)
   summary+= getListString("Languages", state.languages,languages)
   document.getElementById("summary").innerHTML = summary
@@ -309,6 +324,8 @@ function drawState(state) {
 
 var getListString =function(group,set,lookup){
   ret = ""
+  console.log(lookup)
+  console.log(_.invert(lookup))
   if (set.size==0){
     return ""
   }else{

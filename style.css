@@ -7,7 +7,7 @@ a{
 }
 
 #summary{
-    height: 40px;
+    height: 60px;
     margin-left: 50px;
 }
 
@@ -70,8 +70,9 @@ nav{
 }
 
 .schedule-button{
-    width: 50px;
+    width: 60px;
     margin-left: 5px;
+    text-align: center
 }
 
 .gender-button:hover{
