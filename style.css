@@ -42,6 +42,8 @@ nav{
 }
 
 
+
+
 #current-tab{
     height:calc(100vh-300px);
 }
@@ -69,6 +71,8 @@ nav{
     font-size: 130%;
     width: 170px;
 }
+
+
 
 .language-selected {
     background-color: powderblue;
