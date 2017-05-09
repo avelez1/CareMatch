@@ -46,8 +46,8 @@ $( document ).ready(function() {
     }else{
       state.languages.delete(languageNumber)
     }
-      drawState(state);
-    })
+    drawState(state);
+  })
 
   $(".care-needs-button").click(function(e){
     $("#"+this.id).toggleClass("care-needs-selected")
@@ -58,7 +58,7 @@ $( document ).ready(function() {
       state.careNeeds.delete(careNeedsNumber)
     }
     drawState(state);
-    
+
   })
 
   $(".gender-button").click(function(e){
@@ -66,7 +66,7 @@ $( document ).ready(function() {
     $("#"+this.id).addClass("gender-selected")
     state.gender = this.id.substring(this.id.length-1,this.id.length)
     drawState(state);
-    
+
   })
 
   $(".schedule-button").click(function(e){
@@ -100,8 +100,8 @@ $( document ).ready(function() {
         careNeed.toggleClass("care-needs-selected")
         careNeedsNumber = String(i);
         state.careNeeds.delete(careNeedsNumber)
-        }
       }
+    }
     drawState(state);
   })
 
@@ -121,10 +121,10 @@ $( document ).ready(function() {
     cycleTab(1)
   })
   window.addEventListener("keydown", function(e) {
-      // space and arrow keys
-      if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-          e.preventDefault();
-      }
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault();
+    }
   }, false);
   document.onkeyup = function(e){
     e.preventDefault()
@@ -179,38 +179,41 @@ function initMap() {
     center: centerLocation,
     keyboardShortcuts: false
   });
-  
-  var alyssaIcon = new google.maps.MarkerImage(
-  'images/caregiver1.jpg',
-  null, /* size is determined at runtime */
-  null, /* origin is 0,0 */
-  null, /* anchor is bottom center of the scaled image */
-  new google.maps.Size(102, 68)
-  ); 
-  
+
+  var icons = []
+  for(var i =1; i<=4;i++){
+    icons.push(new google.maps.MarkerImage(
+      'images/caregiver-thumbnail'+i+'.jpg',
+      null, /* size is determined at runtime */
+      null, /* origin is 0,0 */
+      null, /* anchor is bottom center of the scaled image */
+      new google.maps.Size(102, 68)
+    ))
+  }
+
   alyssaMarker = new google.maps.Marker({
     position: alyssaLocation,
     map: map,
     title: "Alyssa P. Hacker",
-    icon: alyssaIcon
+    icon: icons[0]
   });
   benMarker = new google.maps.Marker({
     position: benLocation,
     map: map,
     title: "Ben Bitdiddle",
-    /* icon: 'images/caregiver2.jpg' */
+    icon: icons[1]
   });
   ivannaMarker = new google.maps.Marker({
     position: ivannaLocation,
     map: map,
     title: "Ivanna D. Bugyu",
-    /* icon: 'images/caregiver3.jpg' */
+    icon: icons[2]
   });
   lemMarker = new google.maps.Marker({
     position: lemLocation,
     map: map,
     title: "Lem E. Tweakit",
-    /* icon: 'images/caregiver4.jpg' */
+    icon: icons[3]
   });
 
   google.maps.event.addListener(alyssaMarker, 'click', function() {

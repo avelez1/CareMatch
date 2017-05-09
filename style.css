@@ -247,3 +247,6 @@ nav{
     margin-bottom: 2px;
 }
 
+.email {
+    color: blue !important;
+}
