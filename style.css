@@ -35,14 +35,11 @@ nav{
     margin: 0 auto;
 }
 
-.btn{
+.button_b{
   background-color: white;
   border-width: 2px;
   border-color: black;
 }
-
-
-
 
 #current-tab{
     height:calc(100vh-300px);
@@ -72,7 +69,49 @@ nav{
     width: 170px;
 }
 
+.schedule-button{
+    width: 50px;
+    margin-left: 5px;
+}
 
+.gender-button:hover{
+    background-color:#EEEEEE;
+}
+
+.care-needs-button:hover{
+    background-color:#EEEEEE;
+}
+
+.language-button:hover{
+    background-color:#EEEEEE;
+}
+
+.schedule-button:hover{
+    background-color: #EEEEEE;
+}
+.gender-selected:hover{
+    background-color: #9AC4C9;
+}
+
+.days-selected:hover{
+    background-color: #9AC4C9;
+}
+
+.care-needs-selected:hover{
+    background-color: #9AC4C9;
+}
+
+.language-selected:hover{
+    background-color: #9AC4C9;
+}
+
+.selected:hover{
+    background-color: #9AC4C9 !important;
+}
+
+#change-location-button:hover{
+    background-color: #EEEEEE;
+}
 
 .language-selected {
     background-color: powderblue;
@@ -85,11 +124,6 @@ nav{
 }
 .days-selected {
     background-color: powderblue;
-}
-..pagination-lg::selection {
-    color: red; 
-    background: yellow;
-    background-color: powderblue !important;
 }
 
 /*code modified from https://codepen.io/anon/pen/PmPbWd*/
@@ -134,17 +168,24 @@ nav{
     width: 600px;
     display: None;
 }
-.schedule-button{
-    width: 50px;
-    margin-left: 5px;
-}
+
 .slider-close-button{
     margin-top: 40px;
-    background-color: #e74c3c;
+    background-color: #FF3030;
 }
+
 .red{
-    background-color: #e74c3c;
+    background-color: #FF3030;
 }
+
+.slider-close-button:hover{
+    background-color: #F20000;
+}
+
+.red:hover{
+    background-color: #F20000;
+}
+
 #reset-care-needs{
     margin-left: 40px;
 }

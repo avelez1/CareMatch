@@ -301,13 +301,13 @@ function drawState(state) {
 
   var summary = "<b>Gender:</b> "
   summary+= _.invert(genders)[state.gender]
-  summary+= getListString(state.careNeeds,careNeeds)
-  summary+= getListString(state.languages,languages)
+  summary+= getListString("Care Needs", state.careNeeds,careNeeds)
+  summary+= getListString("Languages", state.languages,languages)
   document.getElementById("summary").innerHTML = summary
 }
 
 
-var getListString =function(set,lookup){
+var getListString =function(group,set,lookup){
   ret = ""
   if (set.size==0){
     return ""
@@ -317,7 +317,7 @@ var getListString =function(set,lookup){
       maxIndex = 3
     }
     ret+="<br>"
-    ret+="  <b>Languages:</b> "
+    ret+="  <b>"+group+ ":</b> "
     Array.from(set).slice(0,maxIndex+1).forEach(function(elt){
       ret += _.invert(lookup)[elt]
       ret += ", "
